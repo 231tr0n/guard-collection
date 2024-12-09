@@ -1,4 +1,5 @@
 local lint = require('guard.lint')
+
 return {
   cmd = 'checkstyle',
   args = {
@@ -9,8 +10,9 @@ return {
   regex = '%[(%w+)%]%s+:(%d+):(%d*):%s+(%w+)%[(.-)%]',
   groups = { 'severity', 'lnum', 'col', 'message', 'code' },
   severities = {
-    ERROR = lint.severities.info,
-    WARN = lint.severities.info,
-    INFO = lint.severities.style,
+    ERROR = lint.severities.error,
+    WARN = lint.severities.warning,
+    INFO = lint.severities.info,
+    DEBUG = lint.severities.style,
   },
 }
