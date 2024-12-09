@@ -282,8 +282,43 @@ M.zigfmt = {
 
 M.biome = {
   cmd = 'biome',
-  args = { 'format', '--stdin-file-path' },
+  args = { 'format', '--write' },
   fname = true,
+  stdin = false,
+}
+
+M.xmllint = {
+  cmd = 'xmllint',
+  args = { '--format', '-' },
+  stdin = true,
+}
+
+M.yamlfix = {
+  cmd = 'yamlfix',
+  args = { '-' },
+  stdin = true,
+}
+
+M.yamlfmt = {
+  cmd = 'yamlfmt',
+  args = { '-' },
+  stdin = true,
+}
+
+M.npm_groovy_lint = {
+  cmd = 'npm-groovy-lint',
+  args = { '--format', '-' },
+  stdin = true,
+}
+
+M.npm_groovy_lint_fix = {
+  cmd = 'npm-groovy-lint',
+  args = { '--fix', '-' },
+  stdin = true,
+}
+
+M.jq = {
+  cmd = 'jq',
   stdin = true,
 }
 
